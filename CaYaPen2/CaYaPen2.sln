@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaYaPen2", "CaYaPen2\CaYaPen2.csproj", "{A070C2EC-4DBF-455A-8530-22E91086649B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A070C2EC-4DBF-455A-8530-22E91086649B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A070C2EC-4DBF-455A-8530-22E91086649B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A070C2EC-4DBF-455A-8530-22E91086649B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A070C2EC-4DBF-455A-8530-22E91086649B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1318D30A-C91A-485D-A2F5-8ADCFA6FFC06}
+	EndGlobalSection
+EndGlobal
