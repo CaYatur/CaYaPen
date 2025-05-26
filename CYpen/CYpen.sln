@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.36105.23 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CYpen", "CYpen\CYpen.csproj", "{7BF83A04-F660-4497-A27E-A99D0D2C808A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BF83A04-F660-4497-A27E-A99D0D2C808A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF83A04-F660-4497-A27E-A99D0D2C808A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF83A04-F660-4497-A27E-A99D0D2C808A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF83A04-F660-4497-A27E-A99D0D2C808A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB774312-5388-468F-9278-F09E301AF4CC}
+	EndGlobalSection
+EndGlobal
