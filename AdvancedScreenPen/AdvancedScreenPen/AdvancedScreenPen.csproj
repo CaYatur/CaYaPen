@@ -1,0 +1,297 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <AssemblyTitle>Advanced Screen Pen Professional</AssemblyTitle>
+    <AssemblyDescription>Professional screen annotation and drawing tool with advanced features including voice control, gesture recognition, collaboration, and mathematical tools</AssemblyDescription>
+    <AssemblyCompany>CaYatur Software</AssemblyCompany>
+    <AssemblyProduct>Advanced Screen Pen Professional</AssemblyProduct>
+    <AssemblyCopyright>Copyright © CaYatur 2025</AssemblyCopyright>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <AssemblyInformationalVersion>2.0.0</AssemblyInformationalVersion>
+    <StartupObject>AdvancedScreenPen.Program</StartupObject>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <WarningsNotAsErrors />
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>false</SelfContained>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>5</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>partial</TrimMode>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Core packages -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Management" Version="9.0.5" />
+    <PackageReference Include="System.Speech" Version="9.0.5" />
+    
+    <!-- Drawing and Graphics -->
+    <PackageReference Include="System.Drawing.Common" Version="8.0.10" />
+    <PackageReference Include="SkiaSharp" Version="2.88.8" />
+    <PackageReference Include="SkiaSharp.Views.WindowsForms" Version="2.88.8" />
+    
+    <!-- Math and Scientific Computing -->
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+    
+    <!-- Multimedia and Audio -->
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    
+    <!-- Networking and Communication -->
+    <PackageReference Include="SignalR.Client" Version="8.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.11" />
+    
+    <!-- Configuration and Settings -->
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+    
+    <!-- Performance and Diagnostics -->
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+    
+    <!-- Serialization -->
+    <PackageReference Include="MessagePack" Version="2.5.192" />
+    
+    <!-- UI Enhancement -->
+    <PackageReference Include="DarkUI" Version="3.2.0" />
+    
+    <!-- Input Handling -->
+    <PackageReference Include="SharpDX" Version="4.2.0" />
+    <PackageReference Include="SharpDX.DirectInput" Version="4.2.0" />
+    
+    <!-- Image Processing -->
+    <PackageReference Include="ImageSharp" Version="3.1.6" />
+    <PackageReference Include="ImageSharp.Drawing" Version="2.1.4" />
+    
+    <!-- PDF Export -->
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
+    <PackageReference Include="QuestPDF" Version="2024.12.3" />
+    
+    <!-- Testing (for development) -->
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="NUnit" Version="4.2.2" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" Condition="'$(Configuration)'=='Debug'" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- System References -->
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Management" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Application Resources -->
+    <EmbeddedResource Include="Resources\**\*" />
+    <Content Include="Themes\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Localization\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Plugins\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Templates\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Sounds\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Fonts\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Textures\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Shaders\**\*" CopyToOutputDirectory="PreserveNewest" />
+    
+    <!-- Configuration Files -->
+    <None Include="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="appsettings.Development.json" CopyToOutputDirectory="PreserveNewest" Condition="'$(Configuration)'=='Debug'" />
+    <None Include="appsettings.Production.json" CopyToOutputDirectory="PreserveNewest" Condition="'$(Configuration)'=='Release'" />
+    
+    <!-- Documentation -->
+    <None Include="README.md" />
+    <None Include="CHANGELOG.md" />
+    <None Include="LICENSE.txt" />
+    
+    <!-- Application Icon -->
+    <None Include="icon.ico" />
+    
+    <!-- Application Manifest -->
+    <None Include="app.manifest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Create output directories -->
+    <None Include="Scripts\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Documentation\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <!-- Build Events -->
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="echo Building Advanced Screen Pen Professional v2.0..." />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo Build completed successfully!" />
+    <!-- Create version info file -->
+    <WriteLinesToFile 
+      File="$(OutputPath)version.txt" 
+      Lines="Advanced Screen Pen Professional v2.0.0;Built on: $([System.DateTime]::Now.ToString('yyyy-MM-dd HH:mm:ss'));Target: $(TargetFramework);Configuration: $(Configuration)" 
+      Overwrite="true" />
+  </Target>
+
+  <!-- Publish Profiles -->
+  <PropertyGroup Condition="'$(PublishProfile)'=='Windows-x64'">
+    <PublishUrl>publish\win-x64\</PublishUrl>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <PublishTrimmed>true</PublishTrimmed>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(PublishProfile)'=='Windows-x86'">
+    <PublishUrl>publish\win-x86\</PublishUrl>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <PublishTrimmed>true</PublishTrimmed>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(PublishProfile)'=='Portable'">
+    <PublishUrl>publish\portable\</PublishUrl>
+    <PublishSingleFile>false</PublishSingleFile>
+    <SelfContained>false</SelfContained>
+    <PublishTrimmed>false</PublishTrimmed>
+  </PropertyGroup>
+
+  <!-- Code Analysis -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0" PrivateAssets="all" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- StyleCop Configuration -->
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+
+  <!-- Resource Generation -->
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <!-- Trimming Configuration for AOT -->
+  <ItemGroup>
+    <TrimmerRootDescriptor Include="TrimmerRoots.xml" Condition="'$(PublishTrimmed)'=='true'" />
+  </ItemGroup>
+
+  <!-- Custom MSBuild Tasks -->
+  <UsingTask TaskName="GenerateBuildInfo" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <OutputFile ParameterType="System.String" Required="true" />
+    </ParameterGroup>
+    <Task>
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+        var buildInfo = $@"// Auto-generated build information
+namespace AdvancedScreenPen
+{{
+    public static class BuildInfo
+    {{
+        public const string BuildDate = ""{DateTime.UtcNow:yyyy-MM-dd HH:mm:ss} UTC"";
+        public const string Version = ""2.0.0.0"";
+        public const string Configuration = ""{Configuration}"";
+        public const string TargetFramework = ""{TargetFramework}"";
+        public const string BuildMachine = ""{Environment.MachineName}"";
+        public const string BuildUser = ""{Environment.UserName}"";
+    }}
+}}";
+        File.WriteAllText(OutputFile, buildInfo);
+        ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+
+  <Target Name="GenerateBuildInfo" BeforeTargets="BeforeBuild">
+    <GenerateBuildInfo OutputFile="$(IntermediateOutputPath)BuildInfo.cs" />
+    <ItemGroup>
+      <Compile Include="$(IntermediateOutputPath)BuildInfo.cs" />
+    </ItemGroup>
+  </Target>
+
+  <!-- Cleanup -->
+  <Target Name="CleanOutput" BeforeTargets="Clean">
+    <RemoveDir Directories="$(OutputPath)" />
+    <RemoveDir Directories="$(IntermediateOutputPath)" />
+  </Target>
+
+  <!-- Package Information for NuGet (if needed) -->
+  <PropertyGroup>
+    <PackageId>AdvancedScreenPen</PackageId>
+    <PackageVersion>2.0.0</PackageVersion>
+    <Authors>CaYatur</Authors>
+    <Company>CaYatur Software</Company>
+    <Product>Advanced Screen Pen Professional</Product>
+    <Description>Professional screen annotation and drawing tool with advanced features</Description>
+    <PackageProjectUrl>https://cayatur.com/screenpen</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/cayatur/advanced-screen-pen</RepositoryUrl>
+    <PackageTags>drawing;annotation;screen;pen;collaboration;voice-control;mathematics</PackageTags>
+    <PackageReleaseNotes>Version 2.0.0: Complete rewrite with advanced features including voice control, gesture recognition, collaboration tools, and mathematical instruments.</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>
