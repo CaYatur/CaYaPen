@@ -16,4 +16,4 @@ Ekranın üzerine çizim yapmaya yarayan kalem uygulamalarımın gelişimi:
 
 ---
 
-Çağan Turgut · [caganturgut.com](https://caganturgut.com) · [GitHub](https://github.com/CaYatur)
+Çağan Turgut · [GitHub](https://github.com/CaYatur)
